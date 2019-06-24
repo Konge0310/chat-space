@@ -1,3 +1,19 @@
+
+.flash-box {
+  background-color: #38aef0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+ &__logo {
+  color: white;
+  font-size: 1rem;
+  font-weight: lighter;
+  text-align: center;
+  width: 100vw;
+  }
+}
+
 .wrapper {
   margin: 0;
   padding: 0;
@@ -183,3 +199,4 @@
       padding: 0 30px;
     }
   }
+
