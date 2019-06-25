@@ -1,18 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // var html = `<div class='message'>
-    //             </div>`
-    // var html = `<div class='upper-message'>
-    //             </div>`
-    // var html = `<div class='upper-message__user-name'>
-    //             </div>`
-    // var html = `<div class='upper-message__date'>
-    //             </div>`
-    // var html = `<div class='lower-message'>
-    //             </div>`
-    // var html = `<p class='lower-message__content'>
-    //           </p>`
-
     var html = `
     <div class="message">
 <div class="upper-message">
@@ -34,6 +21,11 @@ ${message.content}
     `
     return html;
   }
+  
+  $('.form__submit').click(function() {
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
+  });
+
   $('#new_form').on('submit', function(e){
     console.log('test');
     e.preventDefault();
@@ -59,6 +51,9 @@ ${message.content}
     .fail(function(){
       alert('error');
     })
+
+
+    
 
   })
 })
