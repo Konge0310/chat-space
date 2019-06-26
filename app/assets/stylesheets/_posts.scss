@@ -187,6 +187,9 @@
       .hidden {
         display: none;
       }
+      .icon {
+        color: black;
+      }
     }
     &__submit {
       background-color: $light_blue;

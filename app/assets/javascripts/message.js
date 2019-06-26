@@ -2,26 +2,26 @@ $(function(){
   function buildHTML(message){
     var html = `
     <div class="message">
-<div class="upper-message">
-<div class="upper-message__user-name">
-${message.user_name}
-</div>
-<div class="upper-message__date">
-${message.datetime}
-</div>
-</div>
-<div class="lower-message">
-<p class="lower-message__content">
-${message.content}
-</p>
 
-</div>
-<p class="lower-message__content">
-              </p></div>
-    `
+      <div class="upper-message">
+        <div class="upper-message__user-name">
+        ${message.user_name}
+        </div>
+        <div class="upper-message__date">
+        ${message.datetime}
+        </div>
+      </div>
+
+      <div class="lower-message">
+        <p class="lower-message__content">${message.content}</p>
+        <img class="lower-message__image" src="${message.image}" alt="Img lights">
+      </div>
+
+    </div> `
+    console.log(html)
     return html;
   }
-  
+
   $('.form__submit').click(function() {
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
   });
