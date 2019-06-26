@@ -1,5 +1,9 @@
 $(function(){
   function buildHTML(message){
+    if(message.image){
+      image = `<img class="lower-message__image" src="${message.image}" alt="Img lights">`
+    }
+    else image = ""
     var html = `
     <div class="message">
 
@@ -14,24 +18,17 @@ $(function(){
 
       <div class="lower-message">
         <p class="lower-message__content">${message.content}</p>
-        <img class="lower-message__image" src="${message.image}" alt="Img lights">
+        ${image}
       </div>
 
     </div> `
-    console.log(html)
     return html;
   }
 
-  $('.form__submit').click(function() {
-    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
-  });
-
   $('#new_form').on('submit', function(e){
-    console.log('test');
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action')
-    console.log(url);
     $.ajax({
       url: url,
       type: "POST",
@@ -42,13 +39,14 @@ $(function(){
     })
     .done(function(message){
       $(".form__submit").prop('disabled', false);
-      console.log('done');
-      console.log(message);
       var html = buildHTML(message);
       $('.messages').append(html)
       $('#new_form')[0].reset();
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'slow');
+      
     })
     .fail(function(){
+      $(".form__submit").prop('disabled', false);
       alert('error');
     })
 
