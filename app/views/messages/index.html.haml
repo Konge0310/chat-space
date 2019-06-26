@@ -3,11 +3,13 @@
   .main-header
     .left-box
       %h3.group-name 
-      = @group.name
+        = @group.name
       %ul.member-list
         Member：koji
         %li.member-list__member 
-    .edit-btn Edit
+    = link_to edit_group_path(@group) do
+      .edit-btn Edit
+
   .messages
     = render @messages
 

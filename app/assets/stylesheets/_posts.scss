@@ -39,6 +39,14 @@
   border-bottom: solid 1px #eee;
   overflow: scroll;
   margin: 0;
+
+  .left-box {
+    margin-top: 35px;
+
+    .member-list {
+    margin-top: 18px;
+    }
+  }
 }
 
 .groups {
@@ -54,9 +62,13 @@
     &__message {
       font-size: 8px;
       margin-top: 5px;
+
+
     }
   }
 }
+
+
   
   .member-list {
     font-size: 12px;
