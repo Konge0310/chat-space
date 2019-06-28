@@ -71,7 +71,6 @@ function appendAddUser(adduserid, addusername) {
     }
 
     $(document).on("click",".user-search-remove",function(){
-      console.log("発火")
       $(this).parent().remove();
     });
 
