@@ -73,20 +73,3 @@ function appendAddUser(adduserid, addusername) {
     $(document).on("click",".user-search-remove",function(){
       $(this).parent().remove();
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // var html = `<div class='chat-group-users' data-id="${adduserid}">
-  // ${addusername}
-  //             </div>`
-  //         $(".chat-group-users").append(html);
