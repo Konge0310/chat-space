@@ -7,7 +7,7 @@ function appendUser(user) {
   
   
   </div>`
-            $("#user-search-result").append(html);
+$("#user-search-result").append(html);
 }
 
 function appendErrMsgToHTML(message) {
@@ -16,7 +16,7 @@ function appendErrMsgToHTML(message) {
 
 </div>`
 
-            $("#user-search-result").append(html);
+$("#user-search-result").append(html);
 }
 
 
@@ -66,10 +66,10 @@ function appendAddUser(adduserid, addusername) {
   <p class='chat-group-user__name'>${addusername}</p>
   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
 </div>`
-       $(".chat-group-users").append(html);
+$(".chat-group-users").append(html);
 
     }
 
-    $(document).on("click",".user-search-remove",function(){
-      $(this).parent().remove();
-    });
+$(document).on("click",".user-search-remove",function(){
+  $(this).parent().remove();
+});
