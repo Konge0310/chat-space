@@ -2,7 +2,7 @@
 .chat-main
   .main-header
     .left-box
-      %h3.group-name 
+      %h3.group-name{"data-group-id": "#{@group.id}"}
         = @group.name
       %ul.member-list
         Member：koji
