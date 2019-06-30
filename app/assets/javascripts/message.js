@@ -54,7 +54,6 @@ $(function(){
   
   var reloadMessages = function() {
     var last_message_id = $(".message:last").data("message-id");
-    console.log(last_message_id);
     var group_id = $(".group-name").data("group-id");
     var auto_url = "/groups/" + group_id + "/api/messages"
     $.ajax({
