@@ -29,15 +29,12 @@
       .chat-group-users.js-add-user
         .chat-group-user.clearfix.js-chat-member
           %p.chat-group-user__name= current_user.name
+          %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{current_user.id}"}
 
-  
-
-          -# = f.collection_check_boxes :user_ids, User.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-  -# .chat-group-users
-  -#   .chat-group-user-22.chat-group-user.clearfix
-  -#     %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "22"}/
-  -#     .chat-group-user__name seo_kyohei
+      -# .chat-group-user-8.chat-group-user.clearfix.js-chat-member
+      -#   %input{:name => "group[user_ids][]", :type => "hidden", :value => "ユーザーのid"}/
+      -#   %p.chat-group-user__name ユーザー名
+      -#   .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
       
 
   .chat-group-form__field.clearfix
