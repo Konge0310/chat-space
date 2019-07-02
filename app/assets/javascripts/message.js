@@ -11,7 +11,7 @@ $(function(){
         ${message.user_name}
         </div>
         <div class="upper-message__date">
-        ${message.datetime}
+        ${message.created_at}
         </div>
       </div>
 
@@ -56,6 +56,7 @@ $(function(){
     var last_message_id = $(".message:last").data("message-id");
     var group_id = $(".group-name").data("group-id");
     var auto_url = "/groups/" + group_id + "/api/messages"
+
     $.ajax({
       url: auto_url,
       type: 'get',
@@ -74,6 +75,8 @@ $(function(){
       alert('自動更新に失敗しました');
     });
   }
-  
+
+  if ($('.form__submit')[0]){
   setInterval(reloadMessages, 5000);
+  }
 })
