@@ -28,13 +28,17 @@
     .chat-group-form__field--right
       .chat-group-users.js-add-user
         .chat-group-user.clearfix.js-chat-member
-          %p.chat-group-user__name= current_user.name
-          %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{current_user.id}"}
-
-      -# .chat-group-user-8.chat-group-user.clearfix.js-chat-member
-      -#   %input{:name => "group[user_ids][]", :type => "hidden", :value => "ユーザーのid"}/
-      -#   %p.chat-group-user__name ユーザー名
-      -#   .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
+          %p.chat-group-user__name
+            = current_user.name
+            %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{current_user.id}"}
+        - @group.users.each do |user|
+          - if user != current_user
+            .chat-group-user.clearfix.js-chat-member
+              %p.chat-group-user__name
+                =user.name
+              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+                削除
+              %input{:name => "group[user_ids][]", :type => "hidden", :value => "#{user.id}"}
       
 
   .chat-group-form__field.clearfix
