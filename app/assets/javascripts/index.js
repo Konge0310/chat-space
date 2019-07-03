@@ -25,12 +25,16 @@ $("#user-search-result").append(html);
 $(function() {
   $("#user-search-field").on("keyup", function() {
     var input = $("#user-search-field").val();
-    
+    var users = $("input[name='group[user_ids][]']");
+    var user_ids = [];
+    $.each(users,function(i, user){
+      user_ids.push($(user).attr("value"))
+    });
 
     $.ajax({
       type: 'GET',
       url: '/users',
-      data: { keyword: input },
+      data: { keyword: input, user_ids: user_ids },
       dataType: 'json'
     })
     .done(function(users) {
